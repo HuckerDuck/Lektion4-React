@@ -14,7 +14,7 @@ export enum ButtonState {
 }
 
 // You lose on: Refactor capabilities, Immutability (Gain in performance)
-type ButtonStateTwo = "idle" | "hover" | "clicked"
+
 
 // Interface - PROPS
 interface CustomButtonProps {
@@ -23,7 +23,7 @@ interface CustomButtonProps {
 
 export function CustomButton(props: CustomButtonProps) {
   const [buttonState, setButtonState] = useState<ButtonState>(ButtonState.idle)
-  const [buttonStateTwo, setButtonsStateTwo] = useState<ButtonStateTwo>("idle")
+ 
 
   return (
     <input
