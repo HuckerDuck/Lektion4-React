@@ -23,7 +23,6 @@ describe('Easy Examples', () => {
   })
 
   test('goes to clicked on click', () => {
-    const buttonText = 'signup'
     const { getByText } = render(<CustomButton buttonText={buttonText} />)
     const btn = getByText(buttonText)
 
@@ -35,6 +34,5 @@ describe('Easy Examples', () => {
     expect(btn).toHaveClass(ButtonState.clicked)
   })
 
-  test("this test should fail for my GitHub action Training", () => {
-    expect(2+2).toBe(44)
+  
 })
