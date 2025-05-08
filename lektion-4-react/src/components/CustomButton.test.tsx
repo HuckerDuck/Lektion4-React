@@ -25,5 +25,17 @@ describe(CustomButton, () => {
     test("this test should work for my GitHub action Training", () => {
         expect(2+2).toBe(4)
     })
+    
 })
 
+describe("custom Buttom Component States", () => {
+    test("Check if buttom Component starts with idle", () => {
+        const buttonText: string = "signup"
+        const { getByText } = render(<CustomButton buttonText={buttonText} />)
+        const customButtomComponent = getByText(buttonText) 
+
+        expect(customButtomComponent).toHaveClass(ButtonState.idle)
+        fireEvent.mouseEnter(customButtomComponent)
+        expect(customButtomComponent).toHaveClass(ButtonState.hover)
+    })
+})
