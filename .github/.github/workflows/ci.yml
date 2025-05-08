@@ -9,12 +9,13 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+defaults:
+  run:
+    working-directory: lektion-4-react
 
-    # Så att alla run: steg körs i lektion-4-react
-    defaults:
-      run:
-        working-directory: lektion-4-react
-
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x, 18.x]
@@ -29,11 +30,23 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+-      - name: Install dependencies
+-        run: npm ci
++      - name: Install dependencies
++        run: |
++          cd lektion-4-react
++          npm ci
 
-      - name: Build
-        run: npm run build
+-      - name: Build
+-        run: npm run build
++      - name: Build
++        run: |
++          cd lektion-4-react
++          npm run build
 
-      - name: Run tests
-        run: npm test -- --ci
+-      - name: Run tests
+-        run: npm test -- --ci
++      - name: Run tests
++        run: |
++          cd lektion-4-react
++          npm test -- --ci
