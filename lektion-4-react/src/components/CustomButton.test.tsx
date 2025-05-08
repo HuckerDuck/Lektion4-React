@@ -36,6 +36,6 @@ describe('Easy Examples', () => {
     expect(btn).toHaveClass(ButtonState.clicked)
   })
 
-  test("this test should fail for my GitHub action Training", () => {
-    expect(2+2).toBe(44)
+  test("this test should work for my GitHub action Training", () => {
+    expect(2+2).toBe(4)
 })
