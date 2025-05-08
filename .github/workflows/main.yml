@@ -38,8 +38,12 @@ jobs:
 
      # Install Dependencies
      - name: Install dependencies
-       run: npm install
+       run: |
+         cd lektion-4-react
+         npm install
 
      # Run Tests
      - name: Run tests
-       run: npm test 
+       run: |
+         cd lektion-4-react
+         npm test
